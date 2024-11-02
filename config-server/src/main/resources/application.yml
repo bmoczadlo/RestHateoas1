@@ -1,0 +1,21 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/bmoczadlo/config-server1
+          clone-on-start: true
+          force-pull: true
+          default-label: main
+#          username: bmoczadlo
+#          password:
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761
+#  instance:
+#    instance-id: 1

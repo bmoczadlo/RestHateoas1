@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: eureka
+server:
+  port: 8761
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF
+eureka:
+  instance:
+    #    prefer-ip-address: true
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
